@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Yireo_VueStorefrontIndexerUrlRewrites>
+            <version>0.0.1</version>
+        </Yireo_VueStorefrontIndexerUrlRewrites>
+    </modules>
+    <global>
+        <models>
+            <vsf_indexer_url_rewrites>
+                <class>Yireo_VueStorefrontIndexerUrlRewrites_Model</class>
+            </vsf_indexer_url_rewrites>
+            <vsf_indexer_resource>
+                <rewrite>
+                    <catalog_product>Yireo_VueStorefrontIndexerUrlRewrites_Rewrite_AppendUrlRewritesData</catalog_product>
+                </rewrite>
+            </vsf_indexer_resource>
+        </models>
+
+        <events>
+            <elasticsearch_product_mapping_properties>
+                <observers>
+                    <vsf_indexer_url_rewrites>
+                        <class>Yireo_VueStorefrontIndexerUrlRewrites_Observer_AppendUrlRewritesMapping</class>
+                        <method>execute</method>
+                    </vsf_indexer_url_rewrites>
+                </observers>
+            </elasticsearch_product_mapping_properties>
+        </events>
+    </global>
+</config>
